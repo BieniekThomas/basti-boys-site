@@ -38,7 +38,7 @@ a{
 
 h1 {
   font-size: 200px;
-  color: transparent;/* Will override color (regardless of order) */
+  color: rgba(0,0,0,0.2);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #3fe2b599;
   line-height: 0.03;

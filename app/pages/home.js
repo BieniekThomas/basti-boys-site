@@ -6,26 +6,35 @@ const HomePage = () => {
 	const [hasClicked, setHasClicked] = useState( false );
 
 	let variantsChildren = {
-		hidden: { opacity: 0, color: 'rgba(0,0,0,0.2)' },
+		hidden: { opacity: 0 },
 		show: { opacity: 1 },
 	};
 
 	const fillScreenWithFonts = () => {
 		const content = [];
-		for ( let i = 0; i < 20; i += 1 ) {
-			const show = {
-				...variantsChildren.show,
-				x: 3 * -i,
-			};
+		const maxRounds = 30;
+		let hidden = {};
+		let xFactor = 3;
+
+		for ( let i = 0; i <= maxRounds; i += 1 ) {
+			if ( i <= maxRounds / 2 ) {
+				hidden = {
+					...variantsChildren.hidden,
+					x: xFactor += 3,
+				};
+			} else {
+				hidden = {
+					...variantsChildren.hidden,
+					x: xFactor -= 3,
+				};
+			}
 
 			variantsChildren = {
 				...variantsChildren,
-				show: {
-					...show,
+				hidden: {
+					...hidden,
 				},
 			};
-
-			console.log( variantsChildren.show );
 
 			content.push(
 				<motion.h1
@@ -41,14 +50,14 @@ const HomePage = () => {
 		return content;
 	};
 
-	const content = fillScreenWithFonts();
+	const fontImage = fillScreenWithFonts();
 
 	const stagger = {
 		hidden: {},
 		show: {
 			transition: {
 				staggerDirection: 1,
-				staggerChildren: 0.5,
+				staggerChildren: 0.08,
 			},
 		},
 	};
@@ -75,7 +84,7 @@ const HomePage = () => {
 				href="/about"
 				onTap={() => onClickHandler()}
 			>
-				{content.map( item => item )}
+				{fontImage.map( item => item )}
 			</motion.a>
 		</div>
 	);
