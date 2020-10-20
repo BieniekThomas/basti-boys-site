@@ -10,6 +10,7 @@ import { ThemeProvider } from 'styled-components';
 import loadable from '@loadable/component';
 import './index.scss';
 import theme from './theme/theme';
+import AboutPage from './pages/about';
 
 const Homepage = loadable( () => import( /* webpackChunkName: "home" */ './pages/home' ) );
 
@@ -17,6 +18,7 @@ const App = () => (
 	<ThemeProvider theme={theme}>
 		<Switch>
 			<Route exact path="/" component={Homepage} />
+			<Route exact path="/about" component={AboutPage} />
 		</Switch>
 	</ThemeProvider>
 );

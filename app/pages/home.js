@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ReactPlayer from 'react-player';
 // import Wrapper from '../util/wrapper/wrapper';
 
 const HomePage = () => {
 	const [hasClicked, setHasClicked] = useState( false );
 
 	let variantsChildren = {
-		hidden: { opacity: 0 },
-		show: { opacity: 1 },
+		hidden: { opacity: 0, lineHeight: 0, fontSize: '10vw' },
+		show: { opacity: 1, lineHeight: 0.03, fontSize: '12vw' },
 	};
 
 	const fillScreenWithFonts = () => {
@@ -67,26 +68,88 @@ const HomePage = () => {
 		setHasClicked( !hasClicked );
 	};
 
+	const variantsYoutube = {
+		hidden: {
+			opacity: 0,
+		},
+		show: {
+			transition: {
+				duration: 2,
+			},
+			opacity: 0.8,
+		},
+	};
+
 	return (
-		<div style={{
-			display: 'flex',
-			height: '100vh',
-			alignItems: 'center',
-			justifyContent: 'center',
-			minHeight: '100vh',
-			maxHeight: '100vh',
-		}}
+		<motion.div
+			initial="hidden"
+			animate="show"
+			variants={stagger}
+			onTap={() => onClickHandler()}
+			style={{
+				display: 'flex',
+				height: '100vh',
+				alignItems: 'center',
+				justifyContent: 'center',
+				minHeight: '100vh',
+				maxHeight: '100vh',
+				padding: '80px 30px',
+				position: 'relative',
+			}}
 		>
 			<motion.a
-				initial="hidden"
-				animate="show"
-				variants={stagger}
 				href="/about"
-				onTap={() => onClickHandler()}
+				style={{
+					position: 'relative',
+					zIndex: 9,
+				}}
 			>
 				{fontImage.map( item => item )}
 			</motion.a>
-		</div>
+			<motion.div
+				variants={variantsYoutube}
+				inital="hidden"
+				animate="show"
+				style={{
+					width: '80%',
+					height: '80%',
+					left: '10%',
+					top: '10%',
+					position: 'absolute',
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					overflow: 'hidden',
+				}}
+			>
+				<div style={{
+					position: 'relative',
+					width: '100%',
+					height: 0,
+					paddingTop: '56.25%',
+				}}
+				>
+					<div style={{
+						position: 'absolute',
+						width: '100%',
+						height: '100%',
+						left: '0',
+						top: '0',
+						pointerEvents: 'none',
+					}}
+					>
+						<ReactPlayer
+							url="https://www.youtube.com/watch?v=RpL9DKwuFkw"
+							width="100%"
+							height="100%"
+							light={false}
+							playing
+							volume={0}
+						/>
+					</div>
+				</div>
+			</motion.div>
+		</motion.div>
 	);
 };
 

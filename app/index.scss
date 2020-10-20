@@ -26,8 +26,8 @@ body {
   display: flex;
   font-family: 'Work Sans', sans-serif;
   font-size: 0.9rem;
-  color: #3fe2b599;
-  background: rgb(31, 30, 34);
+  color: #a486ff;
+  background: #151419;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -37,12 +37,12 @@ a{
 }
 
 h1 {
-  font-size: 200px;
+  font-size: 8vw;
   color: rgba(0,0,0,0.2);
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #3fe2b599;
-  line-height: 0.03;
-  margin: 0;
+  -webkit-text-stroke-color: #a486ff;
+  line-height: normal;
+  margin: 0 0 0 30px;
   white-space: nowrap;
 }
 
