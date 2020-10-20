@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Sulphur+Point&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,900&display=swap');
 *,
 *::after,
 *::before {
@@ -25,10 +24,27 @@ body {
   padding: 0;
   overflow: hidden;
   display: flex;
-  font-family: "Sulphur Point", sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 0.9rem;
-  color: black;
-  background: aquamarine;
+  color: rgb(221, 221, 221);
+  background: rgb(29, 27, 27);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 250px;
+  color: transparent;/* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(221, 221, 221);
+  line-height: 0.03;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.container {
+  display: flex;
+
 }
 
 #app {
