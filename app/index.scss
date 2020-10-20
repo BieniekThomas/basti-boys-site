@@ -34,16 +34,28 @@ body {
 
 a{
   text-decoration: none;
+  color: inherit;
 }
 
-h1 {
-  font-size: 8vw;
+h1,h2,h3 {
   color: rgba(0,0,0,0.2);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #a486ff;
   line-height: normal;
-  margin: 0 0 0 30px;
   white-space: nowrap;
+}
+
+h1 {
+  font-size: 8vw;
+  margin: 0 0 0 30px;
+}
+
+h2 {
+  margin: 0 0 0 15px;
+}
+
+h3 {
+  margin: 0 0 0 8px;
 }
 
 .container {

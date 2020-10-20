@@ -11,11 +11,13 @@ import loadable from '@loadable/component';
 import './index.scss';
 import theme from './theme/theme';
 import AboutPage from './pages/about';
+import Navigation from './components/navigation/navigation';
 
 const Homepage = loadable( () => import( /* webpackChunkName: "home" */ './pages/home' ) );
 
 const App = () => (
 	<ThemeProvider theme={theme}>
+		<Navigation />
 		<Switch>
 			<Route exact path="/" component={Homepage} />
 			<Route exact path="/about" component={AboutPage} />
