@@ -6,31 +6,35 @@ const HomePage = () => {
 	const [hasClicked, setHasClicked] = useState( false );
 
 	let variantsChildren = {
-		hidden: { opacity: 0, x: -100 },
-		show: { opacity: 1, x: 0 },
+		hidden: { opacity: 0, color: 'rgba(0,0,0,0.2)' },
+		show: { opacity: 1 },
 	};
 
 	const fillScreenWithFonts = () => {
 		const content = [];
-		for ( let i = 0; i < 5; i += 1 ) {
+		for ( let i = 0; i < 20; i += 1 ) {
 			const show = {
-				opacity: 1,
+				...variantsChildren.show,
 				x: 3 * -i,
 			};
+
 			variantsChildren = {
 				...variantsChildren,
 				show: {
 					...show,
 				},
 			};
+
+			console.log( variantsChildren.show );
+
 			content.push(
 				<motion.h1
 					initial="hidden"
-					animate="visible"
+					animate="show"
 					key={i}
 					variants={variantsChildren}
 				>
-					KLIPPING
+					Pablo
 				</motion.h1>,
 			);
 		}
@@ -40,20 +44,18 @@ const HomePage = () => {
 	const content = fillScreenWithFonts();
 
 	const stagger = {
-		hidden: { opacity: 0 },
+		hidden: {},
 		show: {
-			opacity: 1,
-			scale: hasClicked ? 500 : 1,
 			transition: {
-				delayChildren: 0.8,
 				staggerDirection: 1,
+				staggerChildren: 0.5,
 			},
 		},
 	};
 
 	const onClickHandler = () => {
 		console.log( 'clicked' );
-		setHasClicked( true );
+		setHasClicked( !hasClicked );
 	};
 
 	return (
@@ -66,23 +68,15 @@ const HomePage = () => {
 			maxHeight: '100vh',
 		}}
 		>
-			<motion.div
+			<motion.a
 				initial="hidden"
 				animate="show"
 				variants={stagger}
 				href="/about"
 				onTap={() => onClickHandler()}
-				whileHover={{
-					scale: 1.2,
-					transition: { duration: 1 },
-				}}
-				drag
-				dragConstraints={{
-					left: -50, right: 50, top: 50, bottom: 50,
-				}}
 			>
 				{content.map( item => item )}
-			</motion.div>
+			</motion.a>
 		</div>
 	);
 };

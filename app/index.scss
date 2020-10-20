@@ -26,17 +26,21 @@ body {
   display: flex;
   font-family: 'Work Sans', sans-serif;
   font-size: 0.9rem;
-  color: rgb(221, 221, 221);
-  background: rgb(29, 27, 27);
+  color: #3fe2b599;
+  background: rgb(31, 30, 34);
   text-transform: uppercase;
   font-weight: 900;
 }
 
+a{
+  text-decoration: none;
+}
+
 h1 {
-  font-size: 250px;
+  font-size: 200px;
   color: transparent;/* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(221, 221, 221);
+  -webkit-text-stroke-color: #3fe2b599;
   line-height: 0.03;
   margin: 0;
   white-space: nowrap;
