@@ -80,7 +80,7 @@ const Navigation = () => {
 				</motion.div>
 				<Nav>
 					<NavWrapper>
-						<div className="hamburger" onClick={() => setOpen( !open )}>
+						<div className="hamburger" onClick={() => setOpen( !open )} role="button">
 							<div className="line" />
 							<div className="line" />
 							<div className="line" />
@@ -93,7 +93,7 @@ const Navigation = () => {
 						>
 							<div className="closeButtonWrapper">
 								<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={links}>
-									<div className="closeButton" onClick={() => setOpen( false )}>
+									<div className="closeButton" onClick={() => setOpen( false )} role="button">
 										X
 									</div>
 								</motion.div>

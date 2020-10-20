@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 // import Wrapper from '../util/wrapper/wrapper';
 
 const HomePage = () => {
@@ -97,15 +98,17 @@ const HomePage = () => {
 				position: 'relative',
 			}}
 		>
-			<motion.a
-				href="/about"
+			<motion.div
+
 				style={{
 					position: 'relative',
 					zIndex: 9,
 				}}
 			>
-				{fontImage.map( item => item )}
-			</motion.a>
+				<Link to="/about">
+					{fontImage.map( item => item )}
+				</Link>
+			</motion.div>
 			<motion.div
 				variants={variantsYoutube}
 				inital="hidden"
