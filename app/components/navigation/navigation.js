@@ -13,18 +13,19 @@ const Navigation = () => {
 			width: '100vw',
 			height: '100vh',
 			transition: {
-				duration: 0.5,
+				duration: 0.3,
 				staggerDirection: -1,
-				staggerChildren: 0.3,
+				staggerChildren: 0.1,
+				delay: 0.8,
 			},
 		},
 		show: {
 			y: 0,
 			transition: {
-				duration: 0.5,
+				duration: 0.3,
 				staggerDirection: 1,
-				staggerChildren: 0.3,
-
+				staggerChildren: 0.1,
+				delayChildren: 0.3,
 			},
 		},
 	};
@@ -34,6 +35,7 @@ const Navigation = () => {
 			opacity: 0,
 			transition: {
 				duration: 0.3,
+				delay: 1,
 			},
 		},
 		show: {
