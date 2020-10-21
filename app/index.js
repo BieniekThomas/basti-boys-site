@@ -10,6 +10,7 @@ import { ThemeProvider } from 'styled-components';
 import loadable from '@loadable/component';
 import './index.scss';
 import { Helmet } from 'react-helmet';
+import { motion, AnimatePresence } from 'framer-motion';
 import theme from './theme/theme';
 import Navigation from './components/navigation/navigation';
 
@@ -34,12 +35,14 @@ const App = () => {
 			</Helmet>
 			<ThemeProvider theme={theme}>
 				<Navigation />
-				<Switch>
-					<Route exact path="/" component={Homepage} />
-					<Route exact path="/about" component={AboutPage} />
-					<Route exact path="/impressum" component={Impressum} />
-					<Route exact path="/datenschutz" component={Datenschutz} />
-				</Switch>
+				<AnimatePresence exitBeforeEnter>
+					<Switch location={location} key={location.pathname}>
+						<Route exact path="/" component={Homepage} />
+						<Route exact path="/about" component={AboutPage} />
+						<Route exact path="/impressum" component={Impressum} />
+						<Route exact path="/datenschutz" component={Datenschutz} />
+					</Switch>
+				</AnimatePresence>
 			</ThemeProvider>
 		</>
 	);

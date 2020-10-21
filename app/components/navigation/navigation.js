@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const Navigation = () => {
-	console.log( 'navigation' );
 	const [open, setOpen] = useState( false );
 
 	const hamburgerOverlay = {
@@ -13,9 +12,9 @@ const Navigation = () => {
 			width: '100vw',
 			height: '100vh',
 			transition: {
-				duration: 0.3,
+				duration: 0.2,
 				staggerDirection: -1,
-				staggerChildren: 0.1,
+				staggerChildren: 0.05,
 				delay: 0.5,
 			},
 		},
@@ -24,24 +23,8 @@ const Navigation = () => {
 			transition: {
 				duration: 0.3,
 				staggerDirection: 1,
-				staggerChildren: 0.1,
-				delayChildren: 0.15,
-			},
-		},
-	};
-
-	const overlayVariants = {
-		hidden: {
-			opacity: 0,
-			transition: {
-				duration: 0.1,
-				delay: 0.5,
-			},
-		},
-		show: {
-			opacity: 1,
-			transition: {
-				duration: 0.1,
+				staggerChildren: 0.05,
+				delayChildren: 0.25,
 			},
 		},
 	};
@@ -56,7 +39,6 @@ const Navigation = () => {
 		show: {
 			transition: {
 				staggerDirection: 1,
-				staggerChildren: 0.15,
 			},
 		},
 	};
@@ -75,9 +57,9 @@ const Navigation = () => {
 	return (
 		<>
 			<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={staggerChildren}>
-				<motion.div initial="hidden" animate={open ? 'show' : 'hidden'} variants={overlayVariants}>
+				{/* <motion.div initial="hidden" animate={open ? 'show' : 'hidden'} variants={overlayVariants}>
 					<Overlay />
-				</motion.div>
+				</motion.div> */}
 				<Nav>
 					<NavWrapper>
 						<div className="hamburger border" onClick={() => setOpen( !open )} role="button">
@@ -177,13 +159,13 @@ const Nav = styled.div`
   }
 `;
 
-const Overlay = styled.div`
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 20;
-  background: rgba(0,0,0,0.8);
-`;
+// const Overlay = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   position: fixed;
+//   z-index: 20;
+//   background: rgba(0,0,0,0.8);
+// `;
 
 const NavWrapper = styled.div`
   height: 80px;
