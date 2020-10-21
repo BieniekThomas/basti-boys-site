@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
-import config from '../config.json';
+import config from '../config';
 
 const HomePage = () => {
 	const stagger = {
@@ -77,9 +77,9 @@ const HomePage = () => {
 
 	return (
 		<motion.div
-			initial={{ opacity: 0 }}
+			initial={{ opacity: 0, transition: { delay: 1, delayChildren: 1 } }}
 			exit={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
+			animate={{ opacity: 1, transition: { delay: 1, delayChildren: 1 } }}
 		>
 			<motion.div
 				initial="hidden"
@@ -94,7 +94,7 @@ const HomePage = () => {
 					}}
 				>
 					<Link to="/about">
-						{fontImage.map( item => item )}
+						{fontImage}
 					</Link>
 				</motion.div>
 				<motion.div

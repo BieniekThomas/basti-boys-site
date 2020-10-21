@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import config from '../../config';
+
 const Navigation = () => {
 	const [open, setOpen] = useState( false );
 
@@ -52,45 +54,56 @@ const Navigation = () => {
 			opacity: 1,
 			y: 0,
 		},
+		onHover: {
+			scale: 1.2,
+		},
+	};
+
+	const handleAnimateState = () => {
+		if ( open ) {
+			return 'show';
+		}
+		return 'hidden';
 	};
 
 	return (
 		<>
-			<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={staggerChildren}>
-				{/* <motion.div initial="hidden" animate={open ? 'show' : 'hidden'} variants={overlayVariants}>
+			<motion.div animate={handleAnimateState()} initial="hidden" variants={staggerChildren}>
+				{/* <motion.div initial="hidden" animate={handleAnimateState()} variants={overlayVariants}>
 					<Overlay />
 				</motion.div> */}
 				<Nav>
 					<NavWrapper>
-						<div className="hamburger border" onClick={() => setOpen( !open )} role="button">
+						<div
+							className="hamburger border"
+							onClick={() => setOpen( !open )}
+							role="button"
+						>
 							o
 						</div>
 					</NavWrapper>
-					<motion.div className="hamburger-content" initial="hidden" animate={open ? 'show' : 'hidden'} variants={hamburgerOverlay}>
+					<motion.div className="hamburger-content" initial="hidden" animate={handleAnimateState()} variants={hamburgerOverlay}>
 						<motion.div style={{
 							width: '100%',
 						}}
 						>
 							<div className="closeButtonWrapper">
-								<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={links}>
-									<div className="closeButton" onClick={() => setOpen( false )} role="button">
+								<motion.div animate={handleAnimateState()} initial="hidden" variants={links}>
+									<div
+										className="closeButton"
+										onClick={() => setOpen( false )}
+										role="button"
+									>
 										X
 									</div>
 								</motion.div>
 							</div>
 							<div className="wrapper">
-								<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={links}>
-									<Link to="/" onClick={() => setOpen( false )}><h3>intro</h3></Link>
-								</motion.div>
-								<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={links}>
-									<Link to="/about" onClick={() => setOpen( false )}><h3>about</h3></Link>
-								</motion.div>
-								<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={links}>
-									<Link to="/impressum" onClick={() => setOpen( false )}><h3>impressum</h3></Link>
-								</motion.div>
-								<motion.div animate={open ? 'show' : 'hidden'} initial="hidden" variants={links}>
-									<Link to="/datenschutz" onClick={() => setOpen( false )}><h3>datenschutz</h3></Link>
-								</motion.div>
+								{config.navigation.map( item => (
+									<motion.div key={item.name} whileHover="onHover" animate={handleAnimateState()} initial="hidden" variants={links}>
+										<Link to={item.path} onClick={() => setOpen( false )}><h3>{item.name}</h3></Link>
+									</motion.div>
+								) )}
 							</div>
 						</motion.div>
 					</motion.div>

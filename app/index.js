@@ -7,19 +7,15 @@ import {
 	useLocation,
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import loadable from '@loadable/component';
 import './index.scss';
 import { Helmet } from 'react-helmet';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import theme from './theme/theme';
 import Navigation from './components/navigation/navigation';
+import Footer from './components/footer/footer';
 
-import config from './config.json';
-
-const Homepage = loadable( () => import( /* webpackChunkName: "home" */ './pages/home' ) );
-const AboutPage = loadable( () => import( /* webpackChunkName: "about" */ './pages/about' ) );
-const Impressum = loadable( () => import( /* webpackChunkName: "impressum" */ './pages/impressum' ) );
-const Datenschutz = loadable( () => import( /* webpackChunkName: "datenschutz" */ './pages/datenschutz' ) );
+import config from './config';
+// import Frame from './components/frame/frame';
 
 const App = () => {
 	const location = useLocation();
@@ -35,14 +31,15 @@ const App = () => {
 			</Helmet>
 			<ThemeProvider theme={theme}>
 				<Navigation />
+				{/* <Frame /> */}
 				<AnimatePresence exitBeforeEnter>
 					<Switch location={location} key={location.pathname}>
-						<Route exact path="/" component={Homepage} />
-						<Route exact path="/about" component={AboutPage} />
-						<Route exact path="/impressum" component={Impressum} />
-						<Route exact path="/datenschutz" component={Datenschutz} />
+						{config.navigation.map( item => (
+							<Route key={item.name} exact path={item.path} component={item.component} />
+						) )}
 					</Switch>
 				</AnimatePresence>
+				<Footer />
 			</ThemeProvider>
 		</>
 	);
