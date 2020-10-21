@@ -10,8 +10,8 @@
 }
 
 ::selection {
-  background: #2ddab8;
-  color: white;
+  background: #a486ff;
+  color:  #000;
 }
 
 ::-webkit-scrollbar {
@@ -60,7 +60,10 @@ h3 {
 
 .container {
   display: flex;
+}
 
+.border{
+  border: 2px solid #a486ff;
 }
 
 #app {

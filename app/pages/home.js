@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 // import Wrapper from '../util/wrapper/wrapper';
+import config from '../config.json';
 
 const HomePage = () => {
 	const [hasClicked, setHasClicked] = useState( false );
@@ -45,7 +46,7 @@ const HomePage = () => {
 					key={i}
 					variants={variantsChildren}
 				>
-					Pablo
+					{config.name}
 				</motion.h1>,
 			);
 		}

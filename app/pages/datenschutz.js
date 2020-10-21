@@ -1,10 +1,10 @@
 import React from 'react';
 
 const aboutPage = () => {
-	console.log( 'about' );
+	console.log( 'Datenschutz' );
 	return (
 		<div>
-			<h1>about</h1>
+			<h1>Datenschutz</h1>
 		</div>
 	);
 };

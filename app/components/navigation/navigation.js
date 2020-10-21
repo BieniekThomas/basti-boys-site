@@ -16,7 +16,7 @@ const Navigation = () => {
 				duration: 0.3,
 				staggerDirection: -1,
 				staggerChildren: 0.1,
-				delay: 0.8,
+				delay: 0.5,
 			},
 		},
 		show: {
@@ -25,7 +25,7 @@ const Navigation = () => {
 				duration: 0.3,
 				staggerDirection: 1,
 				staggerChildren: 0.1,
-				delayChildren: 0.3,
+				delayChildren: 0.15,
 			},
 		},
 	};
@@ -34,14 +34,14 @@ const Navigation = () => {
 		hidden: {
 			opacity: 0,
 			transition: {
-				duration: 0.3,
-				delay: 1,
+				duration: 0.1,
+				delay: 0.5,
 			},
 		},
 		show: {
 			opacity: 1,
 			transition: {
-				duration: 0.3,
+				duration: 0.1,
 			},
 		},
 	};
@@ -50,13 +50,13 @@ const Navigation = () => {
 		hidden: {
 			transition: {
 				staggerDirection: -1,
-				staggerChildren: 0.3,
+				staggerChildren: 0.15,
 			},
 		},
 		show: {
 			transition: {
 				staggerDirection: 1,
-				staggerChildren: 0.3,
+				staggerChildren: 0.15,
 			},
 		},
 	};
@@ -80,10 +80,8 @@ const Navigation = () => {
 				</motion.div>
 				<Nav>
 					<NavWrapper>
-						<div className="hamburger" onClick={() => setOpen( !open )} role="button">
-							<div className="line" />
-							<div className="line" />
-							<div className="line" />
+						<div className="hamburger border" onClick={() => setOpen( !open )} role="button">
+							o
 						</div>
 					</NavWrapper>
 					<motion.div className="hamburger-content" initial="hidden" animate={open ? 'show' : 'hidden'} variants={hamburgerOverlay}>
@@ -195,32 +193,31 @@ const NavWrapper = styled.div`
   justify-content: space-between;
   padding: 15px;
 
-  @media(min-width: 700px) {
-    padding: 10px 80px;
-  }
-
    .hamburger{
     height: 50px;
-    width: 40px;
-    display: flex;
+		width: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 50px;
     position: relative;
     cursor: pointer;
 
     .line {
-      width: 100%;
+			width: 80%;
+			left: 10%;
       height: 2px;
-      background-color: #fff;
+      background-color: #a486ff;
       position: absolute;
-      left: 0;
       top: 10px;
 
       &:nth-child(2){
-        top: 20px;
+        top: 21px;
       }
 
       &:last-child{
         top: auto;
-        bottom: 18px;
+        bottom: 12px;
       }
     }
   }
