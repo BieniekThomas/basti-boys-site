@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import StyledWrapper from '../util/wrapper/wrapper';
 
 const aboutPage = () => {
 	console.log( 'impressum' );
 	return (
-		<motion.div exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+		<StyledWrapper>
 			<h1>Impressum</h1>
-		</motion.div>
+		</StyledWrapper>
 	);
 };
 

@@ -1,14 +1,29 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import StyledWrapper from '../util/wrapper/wrapper';
 
 const aboutPage = () => (
-	<motion.div
-		initial={{ opacity: 0 }}
-		exit={{ opacity: 0 }}
-		animate={{ opacity: 1 }}
-	>
+	<StyledWrapper>
 		<h1>about</h1>
-	</motion.div>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+		<h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, veritatis? Tempore esse eaque at sequi autem, ipsum quisquam saepe aliquid impedit, magnam officia dolorem accusamus excepturi nam distinctio, suscipit beatae!</h3>
+	</StyledWrapper>
 );
 
 export default aboutPage;
