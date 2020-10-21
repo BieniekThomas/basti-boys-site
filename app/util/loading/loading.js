@@ -21,7 +21,7 @@ const StyledSpinner = styled.svg`
   height: 50px;
   
   & .path {
-    stroke: ${props => props.colors.primary};
+    stroke: ${props => props.theme.colors.primary};
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }

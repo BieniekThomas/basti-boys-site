@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import config from '../config';
+import StyledWrapper from '../util/wrapper/wrapper';
 
 const HomePage = () => {
 	const stagger = {
@@ -76,11 +77,7 @@ const HomePage = () => {
 	const fontImage = fillScreenWithFonts();
 
 	return (
-		<motion.div
-			initial={{ opacity: 0, transition: { delay: 1, delayChildren: 1 } }}
-			exit={{ opacity: 0 }}
-			animate={{ opacity: 1, transition: { delay: 1, delayChildren: 1 } }}
-		>
+		<StyledWrapper>
 			<motion.div
 				initial="hidden"
 				animate="show"
@@ -117,7 +114,7 @@ const HomePage = () => {
 					</div>
 				</motion.div>
 			</motion.div>
-		</motion.div>
+		</StyledWrapper>
 	);
 };
 

@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet';
 import { AnimatePresence } from 'framer-motion';
 import theme from './theme/theme';
 import Navigation from './components/navigation/navigation';
-import Footer from './components/footer/footer';
+import Sidebar from './components/sidebar/sidebar';
 
 import config from './config';
 // import Frame from './components/frame/frame';
@@ -39,7 +39,7 @@ const App = () => {
 						) )}
 					</Switch>
 				</AnimatePresence>
-				<Footer />
+				<Sidebar />
 			</ThemeProvider>
 		</>
 	);

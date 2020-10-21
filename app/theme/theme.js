@@ -2,7 +2,7 @@ const theme = {
 	colors: {
 		primary: '#a486ff',
 		secondary: '',
-		background: '#151419',
+		background: '#0f0d19',
 	},
 	fonts: {
 		heading: [],
@@ -13,7 +13,7 @@ const theme = {
 		medium: '',
 		large: '',
 	},
-	contentWidth: '1500px',
+	contentWidth: '100%',
 };
 
 export default theme;

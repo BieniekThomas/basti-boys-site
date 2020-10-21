@@ -86,7 +86,7 @@ const Wrapper = styled.div`
   > div {
     max-width: ${props => props.theme.contentWidth};
     width: 100%;
-    padding: 80px;
+		padding: 80px 160px 30px 80px;
     
     @media(max-width: 790px){
       padding: 60px 15px;
