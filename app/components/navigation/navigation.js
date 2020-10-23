@@ -119,7 +119,7 @@ const Nav = styled.div`
   height: 80px;
   width: 100%;
 	z-index: 99;
-	background: #04070e;
+	/* background: #04070e; */
 
   .hamburger-content{
     position: absolute;
