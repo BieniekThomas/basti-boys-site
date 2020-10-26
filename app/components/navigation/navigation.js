@@ -136,6 +136,7 @@ const PlayerWrapper = styled.div`
 	right: 0;
 	width: 20%;
 	min-width: 350px;
+	z-index: 999;
 `;
 
 const Nav = styled.div`
