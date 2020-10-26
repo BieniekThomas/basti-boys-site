@@ -10,12 +10,14 @@ import { ThemeProvider } from 'styled-components';
 import './index.scss';
 import { Helmet } from 'react-helmet';
 import { AnimatePresence } from 'framer-motion';
+
 import theme from './theme/theme';
 import Navigation from './components/navigation/navigation';
 import Sidebar from './components/sidebar/sidebar';
 
 import config from './config';
 // import Frame from './components/frame/frame';
+
 
 const App = () => {
 	const location = useLocation();

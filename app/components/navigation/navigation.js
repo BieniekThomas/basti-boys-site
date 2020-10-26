@@ -3,7 +3,21 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
+import AudioPlayer from 'react-h5-audio-player';
 import config from '../../config';
+import 'react-h5-audio-player/src/styles.scss'; // Use SASS
+
+const Player = () => {
+	console.log( 'inside Player' );
+
+	return (
+		<AudioPlayer
+			autoPlay
+			src="./public/Wo sind wir V3 ohne FX.mp3"
+			onPlay={e => console.log( 'onPlay' )}
+		/>
+	);
+};
 
 const Navigation = () => {
 	const [open, setOpen] = useState( false );
@@ -68,6 +82,9 @@ const Navigation = () => {
 
 	return (
 		<>
+			<PlayerWrapper>
+				{Player()}
+			</PlayerWrapper>
 			<motion.div animate={handleAnimateState()} initial="hidden" variants={staggerChildren}>
 				{/* <motion.div initial="hidden" animate={handleAnimateState()} variants={overlayVariants}>
 					<Overlay />
@@ -112,6 +129,14 @@ const Navigation = () => {
 		</>
 	);
 };
+
+const PlayerWrapper = styled.div`
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 20%;
+	min-width: 350px;
+`;
 
 const Nav = styled.div`
   position: fixed;

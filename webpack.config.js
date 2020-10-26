@@ -25,7 +25,7 @@ const config = {
 	output: {
 		path: path.resolve( __dirname, 'dist' ),
 		filename: 'index_bundle.js',
-		publicPath: '/',
+		publicPath: '/public/',
 		chunkFilename: '[name].bundle.js',
 	},
 	module: {
@@ -74,9 +74,6 @@ const config = {
 				removeScriptTypeAttributes: true,
 				removeStyleLinkTypeAttributes: true,
 			},
-		}),
-		new webpack.ProvidePlugin({
-			THREE: 'three',
 		}),
 		new CopyWebpackPlugin({
 			patterns: [

@@ -1,11 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import StyledWrapper from '../util/wrapper/wrapper';
 import config from '../config';
 import Image from '../components/image/image';
 
 const aboutPage = () => {
 	const { pictures } = config;
+
+	const imageVariants = {
+		hidden: {
+			opacity: 0,
+			y: 60,
+		},
+		show: {
+			opacity: 1,
+			y: 0,
+		},
+	};
+
+	const textVariantsOuter = {
+		hidden: {
+			staggerDirection: -1,
+		},
+		show: {
+			transition: {
+				staggerDirection: 1,
+				staggerChildren: 0.3,
+			},
+		},
+	};
+
+	const textVariants = {
+		hidden: {
+			opacity: 0,
+			y: 30,
+		},
+		show: {
+			opacity: 1,
+			y: 0,
+		},
+	};
+
 	return (
 		<StyledWrapper>
 			<h1>about</h1>
@@ -22,16 +58,25 @@ const aboutPage = () => {
 					};
 					return (
 						<Section key={image.url}>
-							<div className={index % 2 === 0 ? 'left' : 'right'}>
-								<Image data={data} />
-								<div className="text">
-									<h3>
+							<motion.div className={index % 2 === 0 ? 'left' : 'right'}>
+								<motion.div animate="show" initial="hidden" variants={imageVariants}>
+									<Image data={data} />
+								</motion.div>
+								<motion.div className="text" animate="show" initial="hidden" variants={textVariantsOuter}>
+									<motion.h3 animate="show" initial="hidden" variants={textVariants}>
 										#
 										{index + 1}
-									</h3>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nulla totam fugiat dolorum aspernatur repellat, incidunt magni quis officia provident numquam. Itaque necessitatibus fugiat voluptas placeat tempore temporibus aperiam quaerat.</p>
-								</div>
-							</div>
+									</motion.h3>
+									<motion.p animate="show" initial="hidden" variants={textVariants}>
+										{
+											`Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+										Iusto nulla totam fugiat dolorum aspernatur repellat, incidunt magni quis officia provident numquam. 
+										Itaque necessitatibus fugiat voluptas placeat tempore temporibus aperiam quaerat.`
+										}
+
+									</motion.p>
+								</motion.div>
+							</motion.div>
 						</Section>
 					);
 				})
