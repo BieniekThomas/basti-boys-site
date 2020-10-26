@@ -7,17 +7,13 @@ import AudioPlayer from 'react-h5-audio-player';
 import config from '../../config';
 import 'react-h5-audio-player/src/styles.scss'; // Use SASS
 
-const Player = () => {
-	console.log( 'inside Player' );
-
-	return (
-		<AudioPlayer
-			autoPlay
-			src="./public/Wo sind wir V3 ohne FX.mp3"
-			onPlay={e => console.log( 'onPlay' )}
-		/>
-	);
-};
+const Player = (
+	<AudioPlayer
+		autoPlay
+		src="./Wo sind wir V3 ohne FX.mp3"
+		onPlay={e => console.log( 'onPlay' )}
+	/>
+);
 
 const Navigation = () => {
 	const [open, setOpen] = useState( false );
@@ -83,7 +79,7 @@ const Navigation = () => {
 	return (
 		<>
 			<PlayerWrapper>
-				{Player()}
+				{Player}
 			</PlayerWrapper>
 			<motion.div animate={handleAnimateState()} initial="hidden" variants={staggerChildren}>
 				{/* <motion.div initial="hidden" animate={handleAnimateState()} variants={overlayVariants}>

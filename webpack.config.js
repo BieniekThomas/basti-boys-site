@@ -25,7 +25,7 @@ const config = {
 	output: {
 		path: path.resolve( __dirname, 'dist' ),
 		filename: 'index_bundle.js',
-		publicPath: '/public/',
+		publicPath: '/',
 		chunkFilename: '[name].bundle.js',
 	},
 	module: {
@@ -83,6 +83,10 @@ const config = {
 				},
 				{
 					from: path.join( paths.SRC, '_headers' ),
+					to: path.join( paths.DIST ),
+				},
+				{
+					from: path.join( paths.SRC, 'public' ),
 					to: path.join( paths.DIST ),
 				},
 			],
