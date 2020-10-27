@@ -1,12 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import IsVisible from 'react-is-visible';
 import StyledWrapper from '../util/wrapper/wrapper';
 import config from '../config';
 import Image from '../components/image/image';
 
+
 const aboutPage = () => {
 	const { pictures } = config;
+
+	const outerVariants = {
+		hidden: {
+			transition: {
+				staggerDirection: -1,
+			},
+		},
+		show: {
+			transition: {
+				staggerChildren: 0.5,
+				delay: 0.5,
+			},
+		},
+	};
 
 	const imageVariants = {
 		hidden: {
@@ -21,7 +37,9 @@ const aboutPage = () => {
 
 	const textVariantsOuter = {
 		hidden: {
-			staggerDirection: -1,
+			transition: {
+				staggerDirection: -1,
+			},
 		},
 		show: {
 			transition: {
@@ -42,6 +60,7 @@ const aboutPage = () => {
 		},
 	};
 
+
 	return (
 		<StyledWrapper>
 			<h1>about</h1>
@@ -57,27 +76,31 @@ const aboutPage = () => {
 						},
 					};
 					return (
-						<Section key={image.path}>
-							<motion.div className={index % 2 === 0 ? 'left' : 'right'}>
-								<motion.div animate="show" initial="hidden" variants={imageVariants}>
-									<Image data={data} />
-								</motion.div>
-								<motion.div className="text" animate="show" initial="hidden" variants={textVariantsOuter}>
-									<motion.h3 animate="show" initial="hidden" variants={textVariants}>
-										#
-										{index + 1}
-									</motion.h3>
-									<motion.p animate="show" initial="hidden" variants={textVariants}>
-										{
-											`Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						<IsVisible once>
+							{isVisible => (
+								<Section key={image.path}>
+									<motion.div animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={outerVariants} className={index % 2 === 0 ? 'left' : 'right'}>
+										<motion.div animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={imageVariants}>
+											<Image data={data} />
+										</motion.div>
+										<motion.div className="text" animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={textVariantsOuter}>
+											<motion.h3 animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={textVariants}>
+												#
+												{index + 1}
+											</motion.h3>
+											<motion.p animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={textVariants}>
+												{
+													`Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Iusto nulla totam fugiat dolorum aspernatur repellat, incidunt magni quis officia provident numquam.
 										Itaque necessitatibus fugiat voluptas placeat tempore temporibus aperiam quaerat.`
-										}
+												}
 
-									</motion.p>
-								</motion.div>
-							</motion.div>
-						</Section>
+											</motion.p>
+										</motion.div>
+									</motion.div>
+								</Section>
+							)}
+						</IsVisible>
 					);
 				})
 			}
