@@ -57,7 +57,7 @@ const aboutPage = () => {
 						},
 					};
 					return (
-						<Section key={image.url}>
+						<Section key={image.path}>
 							<motion.div className={index % 2 === 0 ? 'left' : 'right'}>
 								<motion.div animate="show" initial="hidden" variants={imageVariants}>
 									<Image data={data} />
@@ -69,8 +69,8 @@ const aboutPage = () => {
 									</motion.h3>
 									<motion.p animate="show" initial="hidden" variants={textVariants}>
 										{
-											`Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-										Iusto nulla totam fugiat dolorum aspernatur repellat, incidunt magni quis officia provident numquam. 
+											`Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Iusto nulla totam fugiat dolorum aspernatur repellat, incidunt magni quis officia provident numquam.
 										Itaque necessitatibus fugiat voluptas placeat tempore temporibus aperiam quaerat.`
 										}
 
@@ -108,10 +108,6 @@ const Section = styled.div`
 				font-size: 10vw;
 			}
 		}
-	}
-	
-	.left{
-		
 	}
 
 	.right{

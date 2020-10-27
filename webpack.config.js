@@ -1,6 +1,6 @@
 const path = require( 'path' );
 
-const webpack = require( 'webpack' );
+// const webpack = require( 'webpack' );
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 const { BundleAnalyzerPlugin } = require( 'webpack-bundle-analyzer' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
@@ -87,7 +87,7 @@ const config = {
 				},
 				{
 					from: path.join( paths.SRC, 'public' ),
-					to: path.join( paths.DIST ),
+					to: path.join( paths.DIST, 'public' ),
 				},
 			],
 		}),

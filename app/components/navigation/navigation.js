@@ -10,7 +10,7 @@ import 'react-h5-audio-player/src/styles.scss'; // Use SASS
 const Player = (
 	<AudioPlayer
 		autoPlay
-		src="./Wo sind wir V3 ohne FX.mp3"
+		src="public/Wo sind wir V3 ohne FX.mp3"
 		onPlay={e => console.log( 'onPlay' )}
 	/>
 );
@@ -173,7 +173,7 @@ const Nav = styled.div`
       }
     }
 
-    
+
 
     .wrapper{
       display: flex;
