@@ -74,21 +74,46 @@ const aboutPage = () => {
 							height: image.height,
 							width: image.width,
 						},
+						loading: {
+							url: image.loadUrl,
+						},
 					};
 					return (
 						<IsVisible once>
 							{isVisible => (
 								<Section key={image.path}>
-									<motion.div animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={outerVariants} className={index % 2 === 0 ? 'left' : 'right'}>
-										<motion.div animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={imageVariants}>
+									<motion.div
+										animate={isVisible ? 'show' : 'hidden'}
+										initial="hidden"
+										variants={outerVariants}
+										className={index % 2 === 0 ? 'left' : 'right'}
+									>
+										<motion.div
+											animate={isVisible ? 'show' : 'hidden'}
+											initial="hidden"
+											variants={imageVariants}
+										>
 											<Image data={data} />
 										</motion.div>
-										<motion.div className="text" animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={textVariantsOuter}>
-											<motion.h3 animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={textVariants}>
+										<motion.div
+											className="text"
+											animate={isVisible ? 'show' : 'hidden'}
+											initial="hidden"
+											variants={textVariantsOuter}
+										>
+											<motion.h3
+												animate={isVisible ? 'show' : 'hidden'}
+												initial="hidden"
+												variants={textVariants}
+											>
 												#
 												{index + 1}
 											</motion.h3>
-											<motion.p animate={isVisible ? 'show' : 'hidden'} initial="hidden" variants={textVariants}>
+											<motion.p
+												animate={isVisible ? 'show' : 'hidden'}
+												initial="hidden"
+												variants={textVariants}
+											>
 												{
 													`Lorem ipsum dolor sit amet consectetur adipisicing elit.
 										Iusto nulla totam fugiat dolorum aspernatur repellat, incidunt magni quis officia provident numquam.
