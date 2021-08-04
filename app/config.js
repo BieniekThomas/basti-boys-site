@@ -6,7 +6,7 @@ const Impressum = loadable( () => import( /* webpackChunkName: "impressum" */ '.
 const Datenschutz = loadable( () => import( /* webpackChunkName: "datenschutz" */ './pages/datenschutz' ) );
 
 export default {
-	name: 'okay',
+	name: 'BITTERLOH',
 	navigation: [
 		{
 			path: '/',

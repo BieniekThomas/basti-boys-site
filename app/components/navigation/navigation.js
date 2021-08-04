@@ -11,7 +11,8 @@ const Player = (
 	<AudioPlayer
 		autoPlay
 		src="public/Wo sind wir V3 ohne FX.mp3"
-		onPlay={e => console.log( 'onPlay' )}
+		onPlay={() => console.log( 'onPlay' )}
+		layout="horizontal"
 	/>
 );
 
@@ -128,11 +129,15 @@ const Navigation = () => {
 
 const PlayerWrapper = styled.div`
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	right: 0;
-	width: 20%;
-	min-width: 350px;
+	width: 100%;
 	z-index: 999;
+
+	.rhap_container {
+		background: transparent;
+		box-shadow: none;
+	}
 `;
 
 const Nav = styled.div`
@@ -148,7 +153,7 @@ const Nav = styled.div`
     left: 0;
     top: 0;
     width: 100%;
-    background: #04070e;
+    background: ${props => props.theme.colors.background};
     height: 100%;
     display: flex;
     align-items: center;
@@ -166,7 +171,7 @@ const Nav = styled.div`
       .closeButton{
         width: 50px;
         height: 50px;
-        border: 2px solid #a486ff;
+        border: 2px solid ${props => props.theme.colors.primary};
         cursor: pointer;
         text-align: center;
         line-height: 50px;
